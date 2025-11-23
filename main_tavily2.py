@@ -3,17 +3,17 @@ from dotenv import load_dotenv
 load_dotenv()
 
 from langchain.agents import create_agent
-from langchain_tavily import TavilySearch
 from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_tavily import TavilySearch
 
 from schemas import AgentResponse
 
 tools = [TavilySearch()]
 llm = ChatGoogleGenerativeAI(
-        model="gemini-2.5-flash",
-        temperature=0,
-        verbose=True,
-    )
+    model="gemini-2.5-flash",
+    temperature=0,
+    verbose=True,
+)
 
 
 agent = create_agent(
