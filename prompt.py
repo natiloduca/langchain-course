@@ -12,7 +12,16 @@ Action Input: the input to the action
 Observation: the result of the action
 ... (this Thought/Action/Action Input/Observation can repeat N times)
 Thought: I now know the final answer
-Final Answer: the final answer to the original input question formatted according to format_instructions: {format_instructions}
+Final Answer: the final answer to the original input question formatted
+according to the format_instructions: {format_instructions}
+
+Rules you MUST follow:
+- Always think step-by-step and show your reasoning in the Thought fields.
+- Never provide thoughts inside Final Answer.
+- Never break the format.
+- Never return anything outside the required structure.
+- NEVER include markdown formatting like ``` or ### in your response.
+- Final Answer MUST be valid JSON according to the {format_instructions}.
 
 Begin!
 

@@ -29,7 +29,7 @@ def main():
     result = chain.invoke(
         input={
             "input": "search for the latest news about Tavily and summarize them in a concise manner."
-            #"input": "search for 3 job postings for an ai engineer using langchain in the bay area on linkedin and list their details" // An output parsing error occurred
+            # "input": "search for 3 job postings for an ai engineer using langchain in the bay area on linkedin and list their details" // An output parsing error occurred
         }
     )
     print(result)
