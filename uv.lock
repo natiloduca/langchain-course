@@ -161,6 +161,12 @@ wheels = [
 ]
 
 [[package]]
+name = "callbacks"
+version = "0.3.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/eb/15/c71150189ea1cfd04a5853a40e2e074ec777755bd3924980fe51e5c6dd44/callbacks-0.3.0.tar.gz", hash = "sha256:16248b2570394e06cc9c78f586f2582c36a677163e80f8735625d3904b3a5b65", size = 9385, upload-time = "2018-10-09T13:08:30.4Z" }
+
+[[package]]
 name = "certifi"
 version = "2025.11.12"
 source = { registry = "https://pypi.org/simple" }
@@ -428,6 +434,23 @@ wheels = [
 ]
 
 [[package]]
+name = "groq"
+version = "0.36.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "anyio" },
+    { name = "distro" },
+    { name = "httpx" },
+    { name = "pydantic" },
+    { name = "sniffio" },
+    { name = "typing-extensions" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/27/83/932f29aee838dac4ab77d5249c886159f88e157f925de214681cd54b0a1c/groq-0.36.0.tar.gz", hash = "sha256:766fa1ae34918552c6488767b16d4bd0ee3f0fb7809cd9f7760c90d13f32c63a", size = 144596, upload-time = "2025-11-20T02:30:05.446Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/27/79/28f295d5064750674014f50e3c2daf8dc233964c904d357ac2bd0e33fc31/groq-0.36.0-py3-none-any.whl", hash = "sha256:ac7eeae31a5c2e76d30ea678f0b1a9168ff906c4440f5ec3a42ac74d5b4fdb3c", size = 137279, upload-time = "2025-11-20T02:30:04.336Z" },
+]
+
+[[package]]
 name = "grpcio"
 version = "1.76.0"
 source = { registry = "https://pypi.org/simple" }
@@ -687,10 +710,12 @@ version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
     { name = "black" },
+    { name = "callbacks" },
     { name = "isort" },
     { name = "langchain" },
     { name = "langchain-community" },
     { name = "langchain-google-genai" },
+    { name = "langchain-groq" },
     { name = "langchain-ollama" },
     { name = "langchain-openai" },
     { name = "langchain-tavily" },
@@ -703,10 +728,12 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "black", specifier = ">=25.9.0" },
+    { name = "callbacks", specifier = ">=0.3.0" },
     { name = "isort", specifier = ">=7.0.0" },
     { name = "langchain", specifier = ">=1.0.4" },
     { name = "langchain-community", specifier = ">=0.4.1" },
     { name = "langchain-google-genai", specifier = ">=3.0.3" },
+    { name = "langchain-groq", specifier = ">=1.0.1" },
     { name = "langchain-ollama", specifier = ">=1.0.0" },
     { name = "langchain-openai", specifier = ">=1.0.3" },
     { name = "langchain-tavily", specifier = ">=0.2.13" },
@@ -729,6 +756,19 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/76/b9/8c349bd9d671771e1ce67a902b42fb2a2abf04adbde03c682fdc64394e5e/langchain_google_genai-3.1.0.tar.gz", hash = "sha256:9497c0882c14f37964ae6e714050aa5903702afb3e61e6f241839d4e2ee7adb6", size = 239828, upload-time = "2025-11-18T17:04:01.434Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/2d/02/affb854f67a31bc08995822031920166d8d29fd67e1b31712d45e3702492/langchain_google_genai-3.1.0-py3-none-any.whl", hash = "sha256:de076459a1a56f120c68465cad0e022a2ea1d3157bd8677e7b2061f0e1718bbb", size = 55638, upload-time = "2025-11-18T17:04:00.246Z" },
+]
+
+[[package]]
+name = "langchain-groq"
+version = "1.0.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "groq" },
+    { name = "langchain-core" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/88/02/0711848cd15bc2ffc4a08f00700e71e95fee665030894d767ebccbc9af31/langchain_groq-1.0.1.tar.gz", hash = "sha256:6e794761cc2428e027d3e94d2cd2718a366427eb8003d871944184161a275d91", size = 199574, upload-time = "2025-11-13T16:54:56.022Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/a2/6e/f8d7cad7f7bdb6046bb992032e67c57b969e23930e4ebd1d8819c81efe9f/langchain_groq-1.0.1-py3-none-any.whl", hash = "sha256:088f408794ddf6d9959dbbef3d9de6a978fb6a9a7a2a85cf51fac4a147563bd2", size = 17709, upload-time = "2025-11-13T16:54:55.064Z" },
 ]
 
 [[package]]
