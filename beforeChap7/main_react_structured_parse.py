@@ -14,8 +14,8 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_tavily import TavilySearch
 from langsmith import Client
 
-from prompt import REACT_PROMPT_WITH_FORMAT_INSTRUCTIONS
-from schemas import AgentResponse
+from beforeChap7.prompt import REACT_PROMPT_WITH_FORMAT_INSTRUCTIONS
+from beforeChap7.schemas import AgentResponse
 
 tools = [TavilySearch()]
 llm = ChatGoogleGenerativeAI(

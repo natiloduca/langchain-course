@@ -6,7 +6,7 @@ from langchain.agents import create_agent
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_tavily import TavilySearch
 
-from schemas import AgentResponse
+from beforeChap7.schemas import AgentResponse
 
 tools = [TavilySearch()]
 llm = ChatGoogleGenerativeAI(
