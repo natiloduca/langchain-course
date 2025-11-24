@@ -9,6 +9,7 @@ dependencies = [
     "callbacks>=0.3.0",
     "isort>=7.0.0",
     "langchain>=1.0.4",
+    "langchain-anthropic>=1.2.0",
     "langchain-community>=0.4.1",
     "langchain-google-genai>=3.0.3",
     "langchain-groq>=1.0.1",
