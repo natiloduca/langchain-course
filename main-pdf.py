@@ -32,17 +32,21 @@ if __name__ == "__main__":
     )
 
     query = "what is Pinecone in machine learning?"
+    chain = PromptTemplate.from_template(template=query) | llm
+    # result = chain.invoke(input={})
+    # print(result.content)
+
     # --- 3. Connect to the Pinecone Vector Store and get the retriever ---
     vectorstore = PineconeVectorStore(
         index_name=os.environ["INDEX_NAME"], embedding=embeddings_model
     )
     retrieval_qa_chat_prompt = hub.pull("langchain-ai/retrieval-qa-chat")
     combine_docs_chain = create_stuff_documents_chain(llm, retrieval_qa_chat_prompt)
-    retrieval_chain = create_retrieval_chain(
+    retrival_chain = create_retrieval_chain(
         retriever=vectorstore.as_retriever(), combine_docs_chain=combine_docs_chain
     )
 
-    result = retrieval_chain.invoke(input={"input": query})
+    result = retrival_chain.invoke(input={"input": query})
 
     print(result)
     template = """Use the following pieces of context to answer the question at the end.
@@ -50,6 +54,10 @@ if __name__ == "__main__":
     {context}
     Question: {question}
     Helpful Answer:"""
+    # prompt = PromptTemplate(input_variables=["context", "question"], template=template)
+    # chain = prompt | llm
+    # result = chain.invoke(input={"context": retrival_chain.invoke(input={"input": query}), "question": RunnablePassthrough()})
+    # res = rag_chain.invoke(input={"question": query})
 
     custom_promt = PromptTemplate.from_template(template=template)
 
