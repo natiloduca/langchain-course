@@ -23,7 +23,8 @@ def format_docs(docs):
 
 if __name__ == "__main__":
     print("hi")
-    pdf_path = "react.pdf"
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    pdf_path = os.path.join(script_dir, "react.pdf")
     loader = PyPDFLoader(file_path=pdf_path)
     documents = loader.load()
     text_splitter = CharacterTextSplitter(
