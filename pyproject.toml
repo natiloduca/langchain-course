@@ -3,7 +3,7 @@ name = "langchain-course"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.10, <3.12"
 dependencies = [
     "black>=25.9.0",
     "callbacks>=0.3.0",
@@ -24,5 +24,5 @@ dependencies = [
     "sentence-transformers>=5.1.2",
     "tavily>=1.1.0",
     "faiss-cpu>=1.13.0",
-    "dotenv>=0.9.9",
+    "pypdf>=4.4.0",
 ]
