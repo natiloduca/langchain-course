@@ -3,15 +3,14 @@ import os
 from dotenv import load_dotenv
 from langchain import hub
 from langchain.chains.combine_documents import create_stuff_documents_chain
-from langchain.chains.retrieval import create_retrieval_chain
-from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_core.prompts import PromptTemplate
 from langchain_core.runnables import RunnablePassthrough
+from langchain.chains.retrieval import create_retrieval_chain
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import CharacterTextSplitter
 from langchain_groq import ChatGroq
-# from langchain_community.vectorstores import FAISS does not work in this environment
 from langchain_community.vectorstores import Annoy
+from langchain_huggingface import HuggingFaceEmbeddings
 
 
 load_dotenv()
