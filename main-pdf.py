@@ -14,6 +14,7 @@ from langchain_huggingface import HuggingFaceEmbeddings
 
 
 load_dotenv()
+os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
 
 def format_docs(docs):
